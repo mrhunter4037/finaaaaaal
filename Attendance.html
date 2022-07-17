@@ -12,13 +12,10 @@
 
         <table border="1" align="center" cellspacing="0">
 
-            <colgroup> 
+            <colgroup>
                 <col />
                 <col />
-                <col style="padding: 1px 34px;"/>
-                <col />
-                <col />
-                <col />
+                <col style="padding: 1px 34px;" />
             </colgroup>
 
             <thead>
@@ -35,7 +32,7 @@
 
             <tbody>
 
-                <tr>
+                <!-- <tr>
                     <td>1</td>
                     <td>12345</td>
                     <td>John Doe</td>
@@ -75,21 +72,45 @@
                     <td><button class="att">&#9989;</button></td>
                     <td><button class="att">&#128683;</button></td>
                     <td><button class="att">&#128337;</button></td>
-                </tr>
+                </tr> -->
+            </tbody>
+            <tfoot>
                 <tr class="foot">
                     <td colspan="3">Statistics</td>
                     <td>0</td>
                     <td>0</td>
                     <td>0</td>
                 </tr>
-
-            </tbody>
+            </tfoot>
         </table>
         <br>
         <br>
-        <button id="b1">Add Students</button>
+
+        <button type="submit" id="b1" onclick="openPopup()">Add Students</button>
+        <div class="popup" id="popup">
+
+            <h2>Add new Student</h2>
+            <label for="StID" style="padding-right: 5px;">Student ID </label>
+            <input name="StID" id="StID" type="number" placeholder="5 digits number" required>
+            <br>
+            <br>
+            <label for="FirstName" style="padding-right: 5px;">First Name </label>
+            <input name="FirstName" id="FirstName" type="text" placeholder="Enter First Name" required>
+            <br>
+            <br>
+            <label for="LastName" style="padding-right: 5px;">Last Name </label>
+            <input name="LastName" id="LastName" type="text" placeholder="Enter Last Name" required>
+
+            <p>Warning : Adding Students will reset the sheet ! </p>
+
+            <button type="button" onclick="addRow()">Save</button>
+            <button type="button" onclick="closePopup()">Cancel</button>
+
+        </div>
+
         <button id="b2" onclick="exportToCsv('test')">Save</button>
         <button>Clear All</button>
+
     </div>
     <a href=""></a>
     <script src="Attendance.js"></script>
